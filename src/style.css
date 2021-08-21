@@ -26,13 +26,11 @@ ul {
   font-weight: 600;
 }
 
-.fa-cloud-moon {
-  font-size: 100px;
-  margin: 10px 10px;
-}
-
 .icon-temp {
+  color: #a393eb;
   display: inline-block;
+  font-size: 70px;
+  vertical-align: middle;
 }
 
 .main-container {
@@ -55,18 +53,31 @@ ul {
   padding-top: 20px;
 }
 
+.search-city {
+  background-color: #f5c7f7;
+  border: 1px solid #f5c7f7;
+  border-radius: 4px;
+  color: #fff;
+  padding: 7px 10px;
+}
+
+.search-row {
+  padding-bottom: 25px;
+}
+
 .secondary-desc {
   color: #a393eb;
   font-size: 14px;
   font-style: italic;
 }
 
-.temp {
-  color: #a393eb;
-  font-size: 70px;
-}
-
 .temp-metric {
   font-size: 20px;
   vertical-align: top;
+}
+
+#weather-icon {
+  display: inline-block;
+  height: 120px;
+  width: 120px;
 }

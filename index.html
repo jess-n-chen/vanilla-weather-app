@@ -26,7 +26,24 @@
   </head>
   <body>
     <div class="main-container">
-      <div class="row">
+      <div class="row search-row">
+        <form id="search-form">
+          <div class="row">
+            <div class="col-10">
+              <input
+                class="form-control"
+                id="city-input"
+                placeholder="Enter a city"
+                type="search"
+              />
+            </div>
+            <div class="col-2">
+              <button type="submit" class="search-city">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="row main-content">
         <div class="col-6 left-section">
           <h1 class="city-name">New York</h1>
           <ul>
@@ -43,7 +60,11 @@
           </ul>
         </div>
         <div class="col-6 right-section">
-          <i class="fas fa-cloud-moon icon-temp"></i>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+            alt="mostly cloudy"
+            id="weather-icon"
+          />
           <h2 class="temp icon-temp">
             <span class="tempvalue">26</span>
             <span class="temp-metric cel">°C</span>
