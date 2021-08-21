@@ -23,7 +23,7 @@ function dateTime(timestamp) {
     minutes = `0${minutes}`;
   }
 
-  return `LUD: ${days[day]}, ${hours}:${minutes}`;
+  return `${days[day]}, ${hours}:${minutes}`;
 }
 
 //Function to Display Desired City's Weather
@@ -36,10 +36,12 @@ function displayTemp(response) {
   let dateTimeValue = document.querySelector(".day-time");
   let icon = document.querySelector("#weather-icon");
 
+  tempCel = response.data.main.temp;
+
   weatherDesc.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = `${response.data.main.humidity} %`;
   windSpeed.innerHTML = `${Math.round(response.data.wind.speed)} km/h`;
-  temp.innerHTML = Math.round(response.data.main.temp);
+  temp.innerHTML = Math.round(tempCel);
   dateTimeValue.innerHTML = dateTime(response.data.dt * 1000);
   icon.setAttribute(
     "src",
@@ -69,7 +71,37 @@ function searchForm(event) {
   weatherAPI(cityInput.value);
 }
 
+function convertC2F(event) {
+  event.preventDefault();
+  cel.classList.remove("active");
+  fah.classList.add("active");
+
+  let currentTemp = document.querySelector(".tempvalue");
+  let currentTempValue = (tempCel * 9) / 5 + 32;
+  currentTemp.innerHTML = Math.round(currentTempValue);
+}
+
+function convertF2C(event) {
+  event.preventDefault();
+  fah.classList.remove("active");
+  cel.classList.add("active");
+
+  let currentTemp = document.querySelector(".tempvalue");
+  currentTemp.innerHTML = Math.round(tempCel);
+}
+
+//Declare Default Temp Value from HTML as Current Temp
+let tempCel = document.querySelector(".tempvalue").innerHTML;
+tempCel = parseInt(tempCel, 10);
+
 //Declare Current City Value from HTML
-//let city = document.querySelector(".city-name").innerHTML;
 let searchCity = document.querySelector("#search-form");
 searchCity.addEventListener("submit", searchForm);
+
+//Convert to F
+let C2F = document.querySelector("#fah");
+C2F.addEventListener("click", convertC2F);
+
+//Convert back to C
+let F2C = document.querySelector("#cel");
+F2C.addEventListener("click", convertF2C);

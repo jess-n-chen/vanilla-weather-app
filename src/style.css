@@ -71,9 +71,17 @@ ul {
   font-style: italic;
 }
 
-.temp-metric {
+.temp-metric,
+.temp-metric a {
+  color: #a393eb;
   font-size: 20px;
+  text-decoration: none;
   vertical-align: top;
+}
+
+.temp-metric a:hover {
+  color: #27296d;
+  text-decoration: none;
 }
 
 #weather-icon {
