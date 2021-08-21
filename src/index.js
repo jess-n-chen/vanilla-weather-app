@@ -14,8 +14,6 @@ function dateTime(timestamp) {
   let hours = date.getHours();
   let minutes = date.getMinutes();
 
-  console.log(minutes);
-
   if (hours < 10) {
     hours = `0${hours}`;
   }
@@ -28,7 +26,6 @@ function dateTime(timestamp) {
 
 //Function to Display Desired City's Weather
 function displayTemp(response) {
-  console.log(response);
   let weatherDesc = document.querySelector(".weather-desc");
   let humidity = document.querySelector(".humid");
   let windSpeed = document.querySelector(".wind");
