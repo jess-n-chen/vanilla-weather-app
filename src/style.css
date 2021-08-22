@@ -26,6 +26,15 @@ ul {
   font-weight: 600;
 }
 
+.future-temp-low {
+  opacity: 0.5;
+}
+
+.future-weather {
+  padding-top: 25px;
+  text-align: center;
+}
+
 .icon-temp {
   color: #a393eb;
   display: inline-block;
@@ -88,4 +97,10 @@ ul {
   display: inline-block;
   height: 120px;
   width: 120px;
+}
+
+#weather-icon-future {
+  display: inline-block;
+  height: 60px;
+  width: 60px;
 }
