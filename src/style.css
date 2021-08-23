@@ -93,6 +93,10 @@ ul {
   text-decoration: none;
 }
 
+.weather-desc {
+  text-transform: capitalize;
+}
+
 #weather-icon {
   display: inline-block;
   height: 120px;
